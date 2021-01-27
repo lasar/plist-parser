@@ -111,7 +111,8 @@ class PlistParser
 					@error = new Error('Invalid Property List contents (<plist> missing)')
 
 		parser.ondoctype = (doctype) =>
-			if doctype != ' plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"'
+			if doctype != ' plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"' ||
+			   doctype != ' plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"'
 				@error = new Error('Invalid Property List DOCTYPE')
 
 		parser.onerror = (error) =>
